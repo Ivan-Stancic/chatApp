@@ -1,0 +1,11 @@
+.input-container {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 2%;
+    padding: 1%;
+    padding: 1%;
+  }
+  
+  .input-field {
+    flex-grow: 2;
+  }
