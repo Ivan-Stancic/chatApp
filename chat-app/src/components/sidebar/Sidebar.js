@@ -1,12 +1,12 @@
 import React from "react";
 import { createAvatar } from "@dicebear/core";
-import { personas } from "@dicebear/collection";
+import { openPeeps } from "@dicebear/collection";
 import "./Sidebar.css";
 import { Paper, List, ListItem, Avatar, Chip } from "@mui/material";
 
 function Sidebar({ activeMembers, currentMember }) {
   const getAvatar = (userId) => {
-    const avatar = createAvatar(personas, {
+    const avatar = createAvatar(openPeeps, {
       seed: userId.toString(),
     });
     const dataUri = avatar.toDataUriSync();

@@ -82,7 +82,7 @@ function App() {
           <>
             <Paper className="chat-main" elevation={24}>
               <Sidebar activeMembers={activeMembers} className="sidebar"/>
-              <Box className="chat">
+              <Box className="chat" elevation={24}>
                 <Messages
                   className="messages"
                   messages={messages}
