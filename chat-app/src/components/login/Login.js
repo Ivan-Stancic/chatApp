@@ -10,7 +10,12 @@ function Login({ userEnter }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    userEnter(nickname);
+    if(nickname.length < 3) {
+      alert('Unesi Nickname');
+      return;
+    } else {
+      userEnter(nickname);
+    }
   };
 
   return (
