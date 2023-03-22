@@ -10,7 +10,12 @@ function Input({ onSendMessage }) {
   };
 
   const onSubmit = (e) => {
-    onSendMessage(message);
+    if ( message.length < 1) {
+      // alert('Unesi poruku!');
+      return;
+    } else {
+      onSendMessage(message);
+    }
     setMessage("");
   };
 
@@ -34,7 +39,7 @@ function Input({ onSendMessage }) {
         onKeyUp={handleEnter}
       />
       <Button type="submit" variant="contained" color="primary" onClick={onSubmit}>
-        SEND
+        Pošalji
       </Button>
     </Box>
   );

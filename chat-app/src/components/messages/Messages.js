@@ -4,7 +4,8 @@ import "./Messages.css";
 
 function Messages({ messages, currentMember }) {
   const renderMessage = (message) => {
-    const { data: messageText, member: { clientData: { username } }, clientId } = message;
+    const { data: messageText, 
+            member: { clientData: { username } }, clientId } = message;
     const messageFromMe = currentMember.clientId === clientId;
     const color = messageFromMe ? "lightgreen" : "lightblue";
     const textAlign = messageFromMe ? "right" : "left";
