@@ -5,16 +5,25 @@ import "./Login.css";
 
 function Login({ userEnter }) {
   const [nickname, setNickname] = useState("");
+  
   const handleInputChange = (e) => {
     setNickname(e.target.value);
   };
+  
   const handleSubmit = (e) => {
-    e.preventDefault();
+    
     if(nickname.length < 3) {
       alert('Unesi Nickname');
       return;
     } else {
       userEnter(nickname);
+    }
+    
+  };
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
     }
   };
 
@@ -28,6 +37,7 @@ function Login({ userEnter }) {
             type="text"
             value={nickname}
             onChange={handleInputChange}
+            onKeyUp={handleEnter}
           />
           <Button variant="contained" color="primary" onClick={handleSubmit}>
             Ulazak u sobu
